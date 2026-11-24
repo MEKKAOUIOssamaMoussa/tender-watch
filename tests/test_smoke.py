@@ -1,3 +1,4 @@
+import os
 """Smoke test proving the package is importable and the test pipeline runs."""
 
 import tender_watch
