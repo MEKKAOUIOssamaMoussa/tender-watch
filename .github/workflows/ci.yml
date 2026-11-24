@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+
+      - name: Sync environment
+        run: uv sync --locked
+
+      - name: Lint with ruff
+        run: uv run ruff check
+
+      - name: Check formatting with ruff
+        run: uv run ruff format --check
+
+      - name: Type-check with mypy
+        run: uv run mypy
+
+      - name: Run tests with pytest
+        run: uv run pytest
