@@ -1,0 +1,2 @@
+# Normalize text files to LF line endings so Linux/WSL tools never hit CRLF issues.
+* text=auto eol=lf
