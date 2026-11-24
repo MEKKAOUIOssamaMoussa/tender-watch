@@ -30,6 +30,7 @@
 
 ## Verification
 - Verify versions, APIs, and field names against official sources and quote what you checked; never guess.
+- Verify that the exact reference you write exists (tag, version, SHA, URL, field name), not just a related one.
 - Show **REAL command output only**; never present output from a command that did not complete.
 - Report every failed command (exit code and error), even if a re-run succeeds.
 - If a tool is missing (exit 127) or a check could not run, say so explicitly.
