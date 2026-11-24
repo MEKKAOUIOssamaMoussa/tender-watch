@@ -1,0 +1,42 @@
+[project]
+name = "tender-watch"
+version = "0.1.0"
+description = "Daily watch of French public tenders (BOAMP): collection, search, LLM relevance scoring and cited Q&A."
+authors = [
+    { name = "Ossama Moussa Mekkaoui", email = "mpsi.mekkaoui.ossama.moussa@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "UP",
+    "B",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
