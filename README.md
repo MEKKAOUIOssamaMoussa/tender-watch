@@ -13,6 +13,25 @@ Status: work in progress. Nothing is implemented yet.
 - **Frontend:** Angular
 - **Tooling & Quality:** uv, ruff, strict mypy, pytest
 
+## Development
+
+**Prerequisite:** [`uv`](https://docs.astral.sh/uv/) (Python 3.12 is pinned in `.python-version`).
+
+Install the locked development environment:
+
+```bash
+uv sync --locked
+```
+
+Run all checks locally:
+
+```bash
+uv run ruff check
+uv run ruff format --check
+uv run mypy
+uv run pytest
+```
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
